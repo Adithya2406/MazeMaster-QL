@@ -40,51 +40,6 @@ BFS for optimal shortest path
 Success-rate, steps, reward curves
 Path optimality ratio (RL / BFS)
 
-📂 Repository Structure
-📁 project-root
- ├── train.py
- ├── evaluate.py
- ├── maze_generator.py
- ├── maze_env_3d_wrapper.py
- ├── qlambda_agent.py
- ├── visualize.py
- ├── visualize_3d.py
- ├── outputs/
- │    ├── exploration3d.gif
- │    ├── exploration3d_fp.gif
- │    ├── exploration3d_3rd.gif
- │    ├── value_heatmap.png
- │    ├── visitation_heatmap.png
- │    ├── rl_solution.png
- ├── README.md  ← THIS FILE
- └── requirements.txt
-
-🏗️ System Architecture
-               ┌──────────────────────────┐
-               │     Maze Generator       │
-               │  (random recursive back) │
-               └──────────────┬───────────┘
-                              │ maze
-                              ▼
-                    ┌───────────────────┐
-                    │  Maze Environment │
-                    │ (state, reward)   │
-                    └──────────┬────────┘
-                               │ state/action
-                               ▼
-                   ┌─────────────────────┐
-                   │   Q(λ) Agent        │
-                   │  - Q-table          │
-                   │  - Eligibility Tr.  │
-                   └──────────┬──────────┘
-                              │ updates
-                              ▼
-                   ┌─────────────────────┐
-                   │  Visualizer (2D/3D) │
-                   │ - GIF generation    │
-                   │ - Heatmaps          │
-                   └─────────────────────┘
-
 ⚙️ Installation & Setup
 1. Clone the repository
 git clone https://github.com/<your-username>/<repo-name>.git
